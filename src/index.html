@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'" />
+    <title>MAX</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div class="telon" id="telon" aria-hidden="true"></div>
+    <div class="app">
+      <aside class="lateral">
+        <div class="marca arrastre">
+          <img src="../recursos/icono-256.png" alt="" class="marca-logo" />
+          <span class="marca-nombre">MAX</span>
+        </div>
+        <button class="buscar" id="abrirBuscador" type="button">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+          <span>Buscar</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <nav class="menu" id="menu"></nav>
+        <div class="lateral-pie">
+          <button class="enlace-menu" data-ir="ajustes" type="button">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" /></svg>
+            <span>Ajustes</span>
+          </button>
+        </div>
+      </aside>
+
+      <div class="principal">
+        <header class="barra arrastre">
+          <div class="selector-cuenta no-arrastre" id="selectorCuenta"></div>
+          <div class="estado-juego no-arrastre" id="estadoJuego"></div>
+          <div class="hueco"></div>
+          <div class="controles no-arrastre">
+            <button type="button" aria-label="Minimizar" data-ventana="min"><svg viewBox="0 0 24 24"><path d="M5 12h14" /></svg></button>
+            <button type="button" aria-label="Maximizar" data-ventana="max"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2" /></svg></button>
+            <button type="button" aria-label="Cerrar" data-ventana="cerrar" class="cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg></button>
+          </div>
+        </header>
+        <main class="contenido" id="contenido" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <div class="capa" id="buscador" hidden>
+      <div class="paleta" role="dialog" aria-label="Buscar">
+        <input id="buscadorTexto" placeholder="Busca una página o una acción…" autocomplete="off" />
+        <ul id="buscadorLista"></ul>
+      </div>
+    </div>
+    <div class="capa" id="modal" hidden><div class="modal" id="modalCaja" role="dialog"></div></div>
+    <div class="avisos" id="avisos" aria-live="polite"></div>
+    <div id="tarjetaUpdate"></div>
+    <div class="pantalla-remota" id="pantallaRemota" hidden></div>
+    <div class="flotantes" id="flotantes" aria-live="assertive"></div>
+    <div class="intro" id="intro" aria-hidden="true">
+      <div class="intro-luz"></div>
+      <div class="intro-icono">
+        <img src="../recursos/icono-256.png" alt="" />
+        <i class="intro-ojo"></i>
+        <i class="intro-escaner"></i>
+      </div>
+      <div class="intro-nombre"><span>M</span><span>A</span><span>X</span></div>
+      <div class="intro-sub">Launcher</div>
+      <div class="intro-linea"></div>
+    </div>
+
+    <script src="mock.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "name": "max-app",
+  "productName": "MAX",
+  "version": "1.0.0",
+  "description": "MAX: cuentas de Epic, lanzador de Fortnite, tienda y alertas de Salvar el Mundo",
+  "author": "ax¡d",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "crear": "electron-builder --win nsis",
+    "publicar": "electron-builder --win nsis --publish always"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.axid.max",
+    "productName": "MAX",
+    "icon": "recursos/icono.ico",
+    "files": [
+      "main.js",
+      "preload.js",
+      "config.json",
+      "nucleo/**",
+      "src/**",
+      "recursos/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "instalador"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "recursos/icono.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "MAX",
+      "installerLanguages": [
+        "es_ES"
+      ],
+      "language": "3082",
+      "installerIcon": "recursos/icono.ico",
+      "uninstallerIcon": "recursos/icono.ico"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ihaar0n",
+        "repo": "max-launcher",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  }
+}
